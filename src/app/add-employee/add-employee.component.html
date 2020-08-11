@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="heading text-center mb-4 mt-4">
+        <h2>Please fillup the form.</h2>
+    </div>
+    <div class="form">
+        <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)">
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <div class="form-group">
+                        <!-- <i class="fa fa-user"></i> -->
+                        <label for="name">Employee First Name<span style="color: red;">*</span></label>
+                        <input type="text" formControlName="firstName" class="form-control" placeholder="FirstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors || f.firstName.touched}">
+                        <div *ngIf="submitted && f.firstName.errors || f.firstName.touched" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors?.required || f.firstName.errors?.touched">FirstName is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6">
+                    <div class="form-group">
+                        <!-- <i class="fa fa-user"></i> -->
+                        <label for="name">Employee LastName<span style="color: red;">*</span></label>
+                        <input type="text" formControlName="lastName" class="form-control" placeholder="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors || f.lastName.touched}">
+                        <div *ngIf="submitted && f.lastName.errors || f.lastName.touched" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors?.required || f.lastName.errors?.touched">lastName is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <!-- <i class="fa fa-user"></i> -->
+                        <label for="name">Employee email<span style="color: red;">*</span></label>
+                        <input type="text" formControlName="email" class="form-control" placeholder="Employee Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors || f.email.touched}">
+                        <div *ngIf="submitted && f.email.errors || f.email.touched" class="invalid-feedback">
+                            <div *ngIf="f.email.errors?.required || f.email.errors?.touched">email is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="button-wrap">
+                        <button class="btn btn-block btn-primary">Submit</button>
+                    </div>
+                    <div class="button-wrap mt-2">
+                        <button class="btn btn-block btn-success" (click)="backToEmployeeList()">Back to EmployeeList</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

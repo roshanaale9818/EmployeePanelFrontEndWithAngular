@@ -1,0 +1,29 @@
+<div class="container">
+    <app-nav></app-nav>
+    <!-- <p>employee-list works!</p> -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Email</th>
+                        <th scop="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees ; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{employee.firstName}}</td>
+                        <td>{{employee.lastName}}</td>
+                        <td>{{employee.email}}</td>
+                        <td><button class="btn edit-btn mr-2" (click)="employeeDetails(employee.id)">Details</button>
+                            <button class="btn delete-btn" (click)="deleteEmployee(employee.id)">delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="container">
+        <app-nav></app-nav>
+        <div class="employeeDetail">
+            <div class="heading">
+                <h2>Employee Details</h2>
+            </div>
+            <div class="inner-employeeDetail" *ngIf="employee">
+                <div>
+                    <label><b>First Name: </b></label> {{employee.firstName}}
+                </div>
+                <div>
+                    <label><b>Last Name: </b></label> {{employee.lastName}}
+                </div>
+                <div>
+                    <label><b>Email: </b></label> {{employee.email}}
+                </div>
+
+                <div class="mt-2">
+                    <button class="btn  btn-secondary btn-block mt-2" (click)="gotoUpdate(employee.id)">Update details</button>
+                    <button class="btn  btn-success btn-block" (click)="list()">Back to Employee List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

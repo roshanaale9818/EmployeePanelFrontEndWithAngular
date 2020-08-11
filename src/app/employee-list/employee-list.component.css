@@ -1,0 +1,11 @@
+.edit-btn {
+    color: #ffffff;
+    padding: 6px;
+    background-color: green;
+}
+
+.delete-btn {
+    color: #ffffff;
+    padding: 6px;
+    background-color: red;
+}
